@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSGO Panorama UI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+<!-- left navbar -->
+
+  <div class="left-navbar">
+    <ul>
+      <li><img src="images/csgo-logo.png" alt=""></li>
+      <li><i class="fa fa-play-circle" aria-hidden="true"></i></li>
+      <li><i class="fa fa-briefcase" aria-hidden="true"></i></li>
+      <li><i class="fa fa-tv" aria-hidden="true"></i></li>
+      <li><i class="fa fa-cog" aria-hidden="true"></i></li>
+      <li><i class="fa fa-power-off" aria-hidden="true"></i></li>
+    </ul>
+  </div>
+<!-- Right navbar -->
+
+  <div class="right-navbar">
+    <div class="container">
+      <div class="name-sec">
+        <div class="img-avatar">
+          <img src="images/phoenix.png" class="coin-avatar" alt="">
+          <img src="images/avatar.jpg" alt="" class="avatar">
+        </div>
+        <h2>нєłłsиαкє</h2> 
+        <div class="coins">
+          <img src="images/phoenix.png" alt="">
+          <img src="images/bloodhound.png" alt="">
+          <img src="images/broken-fang.png" alt="">
+          <img src="images/years.png" alt="">
+          <img src="images/10years.png" alt="">
+        </div>
+      </div>
+
+<!-- Private RAnk -->
+
+
+      <div class="rank">
+        <img src="images/rank.png" alt="">
+        <div class="img-avatar">
+          <h3>Captain Rank 23</h3>
+        </div>
+        <div class="progress">
+          <div class="progress-bar">
+          </div>
+        </div>
+      </div>
+<!-- global rank   -->
+
+      <div class="global-rank">
+        <div class="rank-img tooltip">
+          <img src="images/global.png" alt="">
+          <h3>Global Elite</h3>
+          <div class="bottom">
+            <p>In Compitetive Skill Group is used to find matches appropriate for player's skill.</p>
+            <i class="fas fa-trophy"></i> 260 Wins
+        </div>
+          <i class="fa fa-chevron-down" onclick="myFunction()"></i>
+        </div>
+        
+        <div class="rank-img tooltip" id="wingman" style="display: none;">
+          <img src="images/master.png" alt="">
+          <h3>Master Guardian II</h3>
+          <div class="bottom">
+            <p>In Wingman Skill Group is used to find matches appropriate for player's skill.</p>
+            <i class="fas fa-trophy"></i> 46 Wins
+        </div>
+        </div>
+
+      </div>
+
+<!-- friends navbar -->
+
+      <div class="friends">
+           <div class="friend-con">
+            <i class="fas fa-user" onclick="toggleUser()"></i>
+            <i class="fas fa-users" onclick="toggleUsers()"></i>
+            <i class="fas fa-history" onclick="toggleHistory()"></i>
+            <i class="fas fa-envelope" onclick="toggleEnv()"></i>
+            <hr id="Indicator">
+          </div>
+    </div>
+<!-- friends list -->
+    <div class="friendlist">
+      <div class="f-list ingame">
+        <img src="images/profile/1.png" alt="">
+        <div class="f-list-p">
+          <p>hK-</p>
+          <p>CS:GO Community Competitive</p>
+        </div>
+      </div>
+    </div>
+    <div class="friendlist">
+      <div class="f-list ingame">
+        <img src="images/profile/2.jpg" alt="">
+        <div class="f-list-p">
+          <p>Hurricane</p>
+          <p>Dust 2 Competitive</p>
+        </div>
+      </div>
+    </div>
+    <div class="friendlist">
+      <div class="f-list">
+        <img src="images/profile/3.jpg" alt="">
+        <div class="f-list-p">
+          <p>Majestic</p>
+          <p>Looking to Trade</p>
+        </div>
+      </div>
+    </div>
+    <div class="friendlist">
+      <div class="f-list">
+        <img src="images/profile/4.jpg" alt="">
+        <div class="f-list-p">
+          <p>Cyber</p>
+          <p>Online</p>
+        </div>
+      </div>
+    </div>
+    <div class="friendlist">
+      <div class="f-list">
+        <img src="images/profile/6.jpg" alt="">
+        <div class="f-list-p">
+          <p>ez</p>
+          <p>Away</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- news section -->
+    <div class="row">
+      <div class="col-1">
+        <div class="news-card">
+          <span>News</span>
+          <img src="images/news.png" alt="">
+          <h3>2021 Service Medal</h3>
+          <p>When you reach Global General (Rank 40), you’ll have the option to reset your Profile Rank and earn (or upgrade) a Service Medal. After January 1, 2021 you’ll be able to receive the new 2021 Service Medal, an inspectable display item that will be visible wherever your avatar is shown.</p>
+          <div class="secnews">
+          <img src="images/news2.png" alt="">
+          <h3>Introducing Operation Broken Fang</h3>
+          <p>New challenges await with the all-new Retakes and the exclusive Broken Fang Premier. Play new maps across a variety of game modes and see how you measure up in the Operation Stats page. </p>
+        </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <img class="orisis" src="images/osiris.png" alt="">
+      </div>
+    </div>
+
+    <!-- market section -->
+    <div class="market-card">
+      <div class="market-head">
+          <p onclick="togglecoupons()">Coupons</p>
+          <p onclick="toggleshop()">Shop</p>
+          <p onclick="togglekeys()">Keys</p>
+          <p onclick="togglemarket()">Market</p>
+      </div>
+      <hr id="Indicator2">
+      <hr id="border">
+      <div class="market-body">
+        <div class="sticker1">
+          <img src="images/sticker1.png" alt="">
+          <p>Dragon Lore </p>
+          <span>$10.0</span>
+        </div>
+        
+        <div class="sticker2">
+          <img src="images/sticker2.png" alt="">
+          <p>Half-Life: Alyx</p>
+          <span>$20.0</span>
+        </div>
+        <div class="sticker3">
+          <img src="images/sticker3.png" alt="">
+          <p>Halo Capsule</p>
+          <span>$30.0</span>
+        </div>
+        <div class="sticker4">
+          <img src="images/sticker4.png" alt="">
+          <p>Howling Dawn</p>
+          <span>$40.0</span>
+        </div>
+
+      </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
