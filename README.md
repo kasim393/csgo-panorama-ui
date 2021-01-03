@@ -1,5 +1,6 @@
 # csgo-panorama-ui
 csgo glassmorphism panorama ui design
+only for desktop version
 
 [Demo](https://kasim393.github.io/csgo-panorama-ui/)
 
