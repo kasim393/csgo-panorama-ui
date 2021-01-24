@@ -1,17 +1,13 @@
 # csgo-panorama-ui
 csgo glassmorphism panorama ui design
-only for desktop version
+### Recommended Resolution
+-1920 x 1080
+### Minimum Resolution
+1280 x 860
 
 [Demo](https://kasim393.github.io/csgo-panorama-ui/)
 
 ![Sreenshot](https://raw.githubusercontent.com/kasim393/csgo-panorama-ui/main/ss.png)
-
-# Future update: 
-* play menu 
-* setting tab 
-* inventory
-* match history
-* API Fetch
 
 ## Built With
 
