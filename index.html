@@ -8,18 +8,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
+  <!-- <video src="images/bg.mp4" autoplay loop playsinline muted></video> -->
+
 <!-- left navbar -->
 
   <div class="left-navbar">
     <ul>
-      <li><img src="images/csgo-logo.png" alt=""></li>
-      <li><i class="fa fa-play-circle" aria-hidden="true"></i></li>
-      <li><i class="fa fa-briefcase" aria-hidden="true"></i></li>
-      <li><i class="fa fa-tv" aria-hidden="true"></i></li>
-      <li><i class="fa fa-cog" aria-hidden="true"></i></li>
+      <li onclick="playTab(event, 'dashboard')" class="tablinks">
+      	<img src="images/csgo-logo.png" class="dashboard" alt=""></li>
+      <li onclick="playTab(event, 'play-csgo')" class="tablinks">
+      	<i class="fa fa-play-circle " aria-hidden="true"></i></li>
+      <!-- <li ><i class="fa fa-broadcast-tower" aria-hidden="true"></i></li> -->
+      <li onclick="playTab(event, 'inventory')" class="tablinks"><i class="fa fa-briefcase" aria-hidden="true"></i></li>
+      <li onclick="playTab(event, 'watch')" class="tablinks"><i class="fa fa-tv" aria-hidden="true"></i></li>
+      <li onclick="playTab(event, 'setting')" class="tablinks"><i class="fa fa-cog" aria-hidden="true"></i></li>
       <li><i class="fa fa-power-off" aria-hidden="true"></i></li>
     </ul>
   </div>
+ 
 <!-- Right navbar -->
 
   <div class="right-navbar">
@@ -135,7 +141,8 @@
     </div>
     </div>
   </div>
-
+  <!-- dashboard -->
+  <div class="tabcontent" id="dashboard" style="display: none;">
   <!-- news section -->
     <div class="row">
       <div class="col-1">
@@ -191,6 +198,486 @@
 
       </div>
     </div>
+  </div>
+
+    <!-- play csgo section -->
+    <section class="play_csgo tabcontent" id="play-csgo" style="display: block;">
+      <div class="play-csgo-container">
+        <div class="play-text">
+          <h1>PLAY</h1>
+        </div>
+        <div class="play-drop-down">
+          <select disabled>
+            <option>Official Matchmaking</option>
+          </select>
+          <img src="images/prime.png" alt="">
+          <h2>PRIME ENABLED</h2>
+        </div>
+        <div class="play-tabs">
+          <span class="active">Competitive</span>
+          <span>Wingman</span>
+          <span>Casual</span>
+          <span>Deathmatch</span>
+          <span>War Games</span>
+          <span>Danger Zone</span>
+          <span>Retakes</span>
+        </div>
+        <div class="play-maps">
+          <h1>Competitive & Scrimmage</h1>
+          <div class="map-card-list">
+            <div class="map-card">
+              <img class="map" src="images/maps/mirage.jpg" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/mirage_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Mirage</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+            <div class="map-card">
+              <img class="map" src="images/maps/inferno.jpg" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/inferno_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Inferno</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-card">
+              <img class="map" src="images/maps/overpass.png" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/overpass_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Overpass</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-card">
+              <img class="map" src="images/maps/cache.jpg" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/cache_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Cache</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-card">
+              <img class="map" src="images/maps/nuke.jpg" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/cobble_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Cobble</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-card">
+              <img class="map" src="images/maps/train.png" alt="">
+              <div class="map-overlay">
+                <div class="map-overlay-icon">
+                  <img src="images/maps/train_icon.png" alt="">
+                </div>
+                <div class="map-overlay-title">
+                  <h2>Train</h2>
+                </div> 
+                <div class="map-overlay-wait">
+                  <p>wait time 3:32</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="play-go">
+        	<span><i class="fa fa-unlock"></i> FRIENDS CAN JOIN</span>
+        	<button>GO</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- inventory -->
+    <section class="inventory tabcontent" id="inventory" style="display: none;">
+      <div class="play-csgo-container">
+        <div class="play-text">
+          <h1>INVENTORY</h1>
+        </div>
+        <div class="play-drop-down">
+          <select disabled>
+            <option>EVERYTHING</option>
+          </select>
+          <h2>Search items</h2>
+          <h2>Loudout</h2>
+          <h2>Trade Up</h2>
+          <h2>Market</h2>
+        </div>
+        <div class="play-tabs">
+          <span class="active">Everything</span>
+          <span>Quality <i class="fa fa-chevron-down"></i> </span>
+        </div>
+        <div class="play-maps">
+          <div class="map-card-list">
+            <div class="inventory-card">
+              <img src="images/loyal.png" class="red-item">  
+              <p>Loyality Badge</p>            
+            </div>
+            <div class="inventory-card">
+              <img src="images/inventory/assimov.png" class="red-item">  
+              <p>AWP Assimov</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/ak47.png" class="red-item">  
+              <p>AK 47 Wasteland</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/bowie.png" class="red-item">  
+              <p>Bowie Knife</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/karambit.png" class="red-item">  
+              <p>Karambit</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/dragon lore.png" class="red-item">  
+              <p>AWP Dragon Lore</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/glock.png" class="red-item">  
+              <p>Water Element</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/deagle.png" class="voilet-item">  
+              <p>Deagle Blaze</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/key.png" class="grey-item">  
+              <p>Key</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/sticker.png" class="grey-item">  
+              <p>Global Sticker</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/case.png" class="grey-item">  
+              <p>Chroma Case</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/Venom.png" class="grey-item">  
+              <p>Venom Case</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/gg.png" class="grey-item">  
+              <p>GG</p>            
+            </div>
+
+            <div class="inventory-card">
+              <img src="images/inventory/grafitti.png" class="grey-item">  
+              <p>Graffitti</p>            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- watch -->
+    <section class="watch tabcontent" id="watch" style="display: none;">
+      <div class="play-csgo-container">
+        <div class="play-text">
+          <h1>WATCH</h1>
+        </div>
+        <div class="play-tabs">
+          <span >Majors</span>
+          <span class="active">Your Matches</span>
+          <span >Downloaded</span>
+          <span ">Live</span>
+          <span ">Streams</span>
+          <span >Events</span>
+          <span class="reload"><i class="fa fa-redo-alt"></i> </span>
+        </div>
+        <div class="play-maps">
+          <div class="left-match-score">
+            <div class="two-col">
+              <div class="score-column loss">
+                <div class="left-col  active">
+                  <img src="images/maps/cache_icon.png" alt="">
+                  <span>Cache</span>
+                </div>
+                <div class="right-col">
+                  <h1><span class="blue-score">7</span> - <span class="yellow-score">16</span></h1>
+                  <p>Sunday, 03:11</p>
+                  <p>Loss</p>
+                </div>
+              </div>
+
+              <div class="score-column victory">
+              <div class="left-col ">
+                <img src="images/maps/mirage_icon.png" alt="">
+                <span>Mirage</span>
+              </div>
+              <div class="right-col">
+                <h1><span class="blue-score">16</span> - <span class="yellow-score">10</span></h1>
+                <p>Monday, 02:14</p>
+                <p>Victory</p>
+              </div>
+            </div>
+
+            <div class="score-column victory">
+              <div class="left-col ">
+                <img src="images/maps/nuke_icon.png" alt="">
+                <span>Nuke</span>
+              </div>
+              <div class="right-col">
+                <h1><span class="blue-score">16</span> - <span class="yellow-score">5</span></h1>
+                <p>Wednesday, 09:25</p>
+                <p>Victory</p>
+              </div>
+            </div>
+          </div>
+          </div>
+            <div class="score-board-container">
+              <div class="score-board-header">
+                <img src="images/maps/cache_icon.png" alt="">
+                <h1>Map <br>Cache</h1>
+                <h1>Duration <br>34&#160;Minutes</h1>
+                <h1>Date <br>Sunday,&#160;03,11</h1>
+              </div>
+
+              <div class="score-board">
+                <table class="tftable" border="1">
+                  <tr>
+                    <td class="image-td"><img src="images/avatar.jpg" alt=""></td>
+                    <td class="name-td">нєłłsиαкє</td>
+                    <td>21</td>
+                    <td>2</td>
+                    <td>17</td>
+                    <td><i class="fas fa-star"></i></td>
+                    <td>56</td>
+                 </tr>
+                  <tr>
+                    <td class="image-td"><img src="images/profile/1.png" alt=""></td>
+                    <td>ez</td>
+                    <td>17</td>
+                    <td>0</td>
+                    <td>21</td>
+                    <td><i class="fas fa-star"></i></td>
+                    <td>35</td>
+                  </tr>
+                  <tr>
+                    <td class="image-td"><img src="images/profile/2.jpg" alt=""></td>
+                    <td>hK-</td>
+                    <td>13</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td><i class="fas fa-star"></i></td>
+                    <td>27</td>
+                  </tr>
+                  <tr>
+                    <td class="image-td"><img src="images/profile/3.jpg" alt=""></td>
+                    <td>Hurricane</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>20</td>
+                    <td><i class="fas fa-star"></i></td>
+                    <td>22</td>
+                  </tr>
+                  <tr>
+                    <td class="image-td"><img src="images/profile/4.jpg" alt=""></td>
+                    <td>Majestic</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>17</td>
+                    <td><i class="fas fa-star"></i></td>
+                    <td>16</td>
+                  </tr>
+               </table>
+
+               <table class="tftable" border="1">
+                <tr>
+                  <td class="image-td"><img src="images/avatar.jpg" alt=""></td>
+                  <td class="name-td">нєłłsиαкє</td>
+                  <td>21</td>
+                  <td>2</td>
+                  <td>17</td>
+                  <td><i class="fas fa-star"></i></td>
+                  <td>56</td>
+               </tr>
+                <tr>
+                  <td class="image-td"><img src="images/profile/1.png" alt=""></td>
+                  <td>ez</td>
+                  <td>17</td>
+                  <td>0</td>
+                  <td>21</td>
+                  <td><i class="fas fa-star"></i></td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td class="image-td"><img src="images/profile/2.jpg" alt=""></td>
+                  <td>hK-</td>
+                  <td>13</td>
+                  <td>1</td>
+                  <td>19</td>
+                  <td><i class="fas fa-star"></i></td>
+                  <td>27</td>
+                </tr>
+                <tr>
+                  <td class="image-td"><img src="images/profile/3.jpg" alt=""></td>
+                  <td>Hurricane</td>
+                  <td>9</td>
+                  <td>4</td>
+                  <td>20</td>
+                  <td><i class="fas fa-star"></i></td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td class="image-td"><img src="images/profile/4.jpg" alt=""></td>
+                  <td>Majestic</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>17</td>
+                  <td><i class="fas fa-star"></i></td>
+                  <td>16</td>
+                </tr>
+             </table>
+              </div>
+            
+            </div>
+            <div class="play-go">
+              <button>Download</button>
+            </div>
+          </div>
+          
+        </div>
+    </section>
+
+    <!-- setting -->
+
+    <section class="setting tabcontent" id="setting" style="display: none;">
+      <div class="play-csgo-container">
+        <div class="play-text">
+          <h1>GAME SETTINGS</h1>
+        </div>
+        <div class="play-tabs">
+          <span >New</span>
+          <span class="active">Video</span>
+          <span >Audio</span>
+          <span ">Games</span>
+          <span ">Keyboard / Mouse</span>
+          <span >Controller</span>
+          <span > <i class="fa fa-search"></i> Search</span>
+        </div>
+        <div class="play-tabs">
+          <span>Video</span>
+          <span>Advance Video</span>
+          <span>HUD Edge Position</span>
+        </div>
+        <div class="play-maps">
+          <div class="setting-video">
+            <div class="video-header">
+              <h1>Video</h1>
+            </div>
+              <div class="video-list-setting">
+                <table class="tftable">
+                  <tr>
+                        <td class="name-td">Main Menu Background Scenery</td>
+                        <td>Nuke <i class="fas fa-chevron-down"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="name-td">Color Mode</td>
+                      <td>Computer Monitor</td>
+                  </tr>
+                  <tr>
+                    <td class="name-td">Aspect Ratio</td>
+                    <td>WIDESCREEN 16:9 <i class="fas fa-chevron-down"></i></td>
+                </tr>
+                <tr>
+                  <td class="name-td">Resolution</td>
+                  <td>1920x1080 <i class="fas fa-chevron-down"></i></td>
+              </tr>
+              <tr>
+                <td class="name-td">Display Mode</td>
+                <td><select disabled>
+                  <option>FULLSCREEN</option>
+                </select></td>
+            </tr>
+            <tr>
+              <td class="name-td">Laptop Power Saving</td>
+              <td>DISABLED <i class="fas fa-chevron-down"></i></td>
+          </tr>
+
+               </table>
+              </div>
+          </div>
+
+          <div class="setting-video">
+            <div class="video-header">
+              <h1>Advance Video</h1>
+            </div>
+              <div class="video-list-setting">
+                <table class="tftable">
+                  <tr>
+                        <td class="name-td">Global Shadow Quaity</td>
+                        <td>VERY LOW <i class="fas fa-chevron-down"></i></td>
+                    </tr>
+                    <tr>
+                      <td class="name-td">Model / Texture Detail</td>
+                      <td>LOW <i class="fas fa-chevron-down"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="name-td">Texture Streaming</td>
+                    <td>DISABLED <i class="fas fa-chevron-down"></i></td>
+                </tr>
+               </table>
+              </div>
+            
+          </div>
+        </div>
+        <div class="play-go">
+          <span><i class="fa fa-history"></i> RESET DEFAULTS</span>
+          <span>DISCARD CHANGES</span>
+          <span>APPLY CHANGES</span>
+        </div>
+      </div>
+    </section>
+
 <script src="script.js"></script>
 </body>
 </html>

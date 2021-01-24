@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-*{
+*,::before,::after{
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+h1,h2,p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
 body{
   font-family: 'Noto Sans', sans-serif;
   margin: 0;
@@ -11,11 +26,19 @@ body{
   justify-content: center;
   min-height: 100vh;
   transition: 0.5s all;
-  background: url("images/bg.jpg") no-repeat;
   background-size: cover;
-  overflow: hidden;
+  overflow: hidden; 
+  background: url(images/bg.jpg)no-repeat;
 }
 
+/*video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}*/
 
 .left-navbar{
   height: 100%;
@@ -25,10 +48,13 @@ body{
   top: 0;
   left: 0;
   background: rgba( 255, 255, 255, 0.1 );
-  backdrop-filter: blur( 4px );
+  backdrop-filter: blur( 10px );
   -webkit-backdrop-filter: blur( 4px );
   overflow-x: hidden;
   margin: 0;
+}
+.left-navbar .active{
+  background: rgba( 0,0,0, 0.1 );
 }
 .left-navbar ul{
   padding: 0;
@@ -44,6 +70,7 @@ body{
 .left-navbar img{
   width: 60px;
   margin: 20px;
+  cursor: pointer;
 }
 .left-navbar li:first-child{
   border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
@@ -62,10 +89,10 @@ body{
   left: 0;
   font-weight: 100;
 }
-.left-navbar li:hover{
+.left-navbar li:hover {
   background: rgba( 0,0,0, 0.1 );
-
 }
+
 
 /* right navbar */
 
@@ -463,8 +490,6 @@ margin-right: 10px;
   padding: 10px;
 }
 
-
-
 .market-body img{
   width: 120px;
   cursor: pointer;
@@ -472,9 +497,7 @@ margin-right: 10px;
 
 .market-body img:hover{
   background: rgba( 0,0,0, 0.1 );
-
 }
-
 .market-body p{
   color:white;
   font-size: 13px;
@@ -486,6 +509,445 @@ margin-right: 10px;
   color: rgb(66, 253, 66);
   font-size: 13px;
   font-family: inherit;
+}
+
+/* play csgo section */
+
+.play_csgo{
+  width: 100%;
+}
+.play-csgo-container{
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+}
+.play-text{
+  color: white;
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
+  padding: 1.15rem 2.5rem;
+}
+.play-drop-down{
+  display: inline-flex;
+  color: white;
+  font-size: 0.6rem;
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
+width: 100%;
+}
+.play-drop-down img{
+  width: 45px;
+  /* filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0)); */
+  margin: 0px 10px;
+}
+select{
+  outline: none;
+  background: rgba( 0, 0, 0, 0.2 );
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 0.8rem 1rem 0.8rem 0.5rem;
+  text-transform: uppercase;
+}
+
+select:hover,
+select:focus {
+  background: rgba( 255, 255, 255, 0.1 );
+}
+.play-drop-down h2{
+  margin-top: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.play-tabs{
+  color: white;
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
+}
+.play-tabs span{
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+}
+.play-tabs span:hover{
+  background: rgba( 0, 0, 0, 0.1 );
+}
+.play-tabs .active{
+  border-bottom: 5px solid rgba( 255, 255, 255, 1 );
+}
+.play-maps{
+  padding: 1rem 2.5rem 1rem 1rem;
+  height:100%; 
+  background-color: rgba( 0,0,0, 0.3 );
+}
+.play-maps h1{
+  color: white;
+  font-weight: 100;
+  border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
+  margin-bottom: 10px;
+  margin-left: 50px;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+.map-card-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+}
+.map-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  position: relative;
+  cursor: pointer;
+  margin: 5px 10px;
+  object-fit: contain;
+
+}
+
+.map-card:hover .map{
+  border: 5px solid white;
+}
+.map-card:after {
+  content: '\A';
+  position: absolute;
+  width: 100%; height:100%;
+  top:0; left:0;
+  background:rgba(0,0,0,0.6);
+  opacity: 1;
+  transition: .2s;
+}
+.map-card:hover:after {
+  opacity: 0;
+}
+
+.map-card img{
+  width: 100%;
+  object-fit: contain;
+}
+.map-overlay{
+  position: absolute;
+  width: 100%;
+}
+
+.map-overlay-icon{
+  position: absolute;
+  top: -120px;
+  left: 30%;
+  width: 100px;
+}
+
+.map-overlay-title{
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+}
+.map-overlay-title h2{
+  font-weight: 500;
+}
+
+.map-overlay-wait{
+  position: absolute;
+  top: 90px;
+  left: 30%;
+  font-size: 0.8rem;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+
+}
+
+.play-go{
+  position: fixed;
+  bottom: 0;
+ background: rgba( 0,0,0, 0.1 );
+  backdrop-filter: blur( 20px );
+  width: 100%;
+  height: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.play-go i{
+  color: white;
+}
+.play-go span{
+  font-family: inherit;
+  color: white;
+  margin-left: 10%;
+}
+.play-go button{
+background: linear-gradient(-45deg, #0d4a0e, #2fab33, #68c968);
+border: none;
+padding: .5rem 6rem;
+color: lightgreen;
+  box-shadow: 1px 1px  5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  margin-right: 15%;
+}
+
+.play-go button:hover{
+  background: linear-gradient(-45deg, #126d13, #34b938, #82f082);
+}
+/* inventory  */
+.inventory .play-drop-down h2{
+  margin-inline: 10px;
+}
+.inventory .play-drop-down h2:last-child{
+  position: absolute;
+  right: 6rem;
+}
+
+.inventory select {
+  padding-right: 2.5rem;
+}
+.inventory .play-tabs{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 2rem 0 3rem;
+}
+
+.inventory-card{
+  margin: 1rem 1rem 3rem;
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+}
+.inventory-card:hover{
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+}
+.inventory-card img{
+  background: rgb(92,92,92);
+  background: linear-gradient(180deg, rgba(92,92,92,1) 0%, rgba(232,232,232,1) 100%);
+  padding:0.2rem 1.5rem;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+.inventory-card .red-item{
+  border-left: 4px solid rgb(209, 71, 71);
+}
+.inventory-card .voilet-item{
+  border-left: 4px solid rgb(135, 71, 209);
+}
+.inventory-card .grey-item{
+  border-left: 4px solid rgb(202, 202, 202);
+}
+.inventory-card p {
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.watch{
+ width: 100%
+}
+.watch .reload{
+  position: absolute;
+  right: 7rem;
+  top: 4.5rem;
+}
+.watch .play-maps{
+  display: grid;
+  grid-template-columns: 0.35fr 1.3fr;
+  grid-template-rows: 1fr;
+  gap: 0px 200px;
+  grid-template-areas:
+    ". .";
+    padding-left: 0;
+    padding-top: 0;
+}
+
+
+.left-match-score{
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba( 255, 255, 255, 0.4 );
+}
+.two-col{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "."
+    ".";
+  margin: 0;
+  padding: 0;
+}
+
+.score-column{
+  display: flex;
+}
+.two-col .active{
+  border-left: 5px solid rgba(232,232,232,1);
+}
+.left-col{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: small;
+  padding: 0.5rem 1rem;
+  
+}
+
+.loss{
+  background: rgb(255,138,138);
+background: linear-gradient(86deg, rgba(255,138,138,0.34) 0%, rgba(255,255,255,0) 72%);
+}
+.victory{
+  background: rgb(60,244,39);
+  background: linear-gradient(86deg, rgba(60,244,39,0.3393732492997199) 0%, rgba(255,255,255,0) 72%);
+}
+.left-col img{
+  width: 60px;
+}
+
+.right-col{
+  padding: 0.5rem 0rem;
+  margin: 0;
+}
+.right-col h1{
+  margin: 0 0 0 1rem;
+  border: 0;
+}
+.right-col .blue-score{
+  font-size: 2rem;
+  color: #b0d2eb;
+}
+.right-col .yellow-score{
+  font-size: 2rem;
+  color: #e6cb88;
+}
+.right-col p{
+  color: white;
+  font-size: small;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+
+.score-board-container{
+  width: 100%;
+}
+.score-board-header{
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  
+}
+.score-board-header img{
+  width: 60px;
+  height: 60px;
+}
+.score-board-header h1{
+  border: none;
+}
+
+.tftable {
+  font-size:12px;
+  color:#b0d2eb;
+  margin: 1rem 5rem;
+  border: none;
+}
+
+.tftable tr {
+  background-color:rgba( 0,0,0, 0.2 );
+}
+.tftable td {
+  font-size:12px;
+  border: none;
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.tftable tr:hover{
+  background-color:rgba( 255, 255, 255, 0.1 )
+}
+.tftable img{
+  width: 20px;
+}
+.tftable .image-td{
+  width: 0px;
+  padding: 0.1rem;
+}
+.tftable .name-td{
+  width: 500px;
+}
+
+.watch .play-go{
+  justify-content: flex-end;
+}
+
+.watch .play-go button{
+  padding: 0.5rem 1rem;
+  color: white;
+  background: #4cb04e;
+  border-radius: 2px;
+}
+
+/* setting */
+
+.setting{
+  width: 100%;
+}
+.setting-video{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  
+}
+.video-header h1{
+  text-align: left;
+  border: none;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.video-list-setting{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.video-list-setting td{
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #EEEEEE;
+}
+.video-list-setting tr{
+  background-color: transparent;
+}
+.video-list-setting table{
+  border-collapse:collapse;
+background-color: rgba( 0, 0, 0, 0.2 );
+}
+.video-list-setting td:hover{
+  background-color: rgba( 0, 0, 0, 0.3 );
+}
+
+.setting .play-go{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content:center;
+}
+.setting .play-go span{
+  padding: 0;
+  margin: 0rem 2rem;
 }
 
 /* media query */
@@ -563,6 +1025,64 @@ margin-right: 10px;
       font-size: 0.9rem;
     }
 
-
-
 }
+
+/* play csgo media qeury */
+
+@media screen and (max-width: 1875px){
+
+
+  .map-card-list{
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .map-card{
+    width: 200px;
+  }
+}
+@media screen and (max-width: 1565px){
+
+  .play_csgo{
+    overflow: scroll;
+  }
+
+ 
+}
+
+/* watch */
+@media screen and (max-width: 1455px){
+  .watch .play-maps{
+    margin-left: 2rem;
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-rows: 1fr;
+    gap: 0px 100px;
+    grid-template-areas:
+      ". .";
+  }
+ 
+}
+
+@media screen and (max-height: 873px){
+
+.setting{
+  overflow: scroll;
+}
+}
+
+
+@media screen and (max-width: 1100px){
+  .play-tabs{
+    margin-left:2rem;
+  }
+  .play-text{
+    margin-left: 2rem;
+  }
+  .play-drop-down{
+    margin-left: 2rem;
+  }
+  .watch .play-maps{
+    margin-left: 3rem;
+  }
+}
+
